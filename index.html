@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienes Raices</title>
+    <!-- Para usar FUENTES DE GOOGLE: también hace faltya especificar el CSS... -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!--Para LIGAR una HOJA de ESTILOS (CSS) usamos: -->
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Esta librería quita los diseños que da el navegador por defecto. MUY ÚTIL ahora en cualquier navegador o dispositivo la página se va a ver iwal-->
+    <link rel="stylesheet" href="css/style.css"> <!-- Que tu CSS sea la última -->
+</head>
+<body>
+
+     <!-- ENCABEZADO DE LA PÁGINA-->
+    <!--
+     <header id = "site-header"> El ATRIBUTO "id" crea un identificador para esta etiqueta EN ESPECÍFICO-->
+    <header class = "site-header inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/"> <!-- cuando en el atributo href ponemos una diagonal nos lleva a la página principal-->
+                <!--Etiqueta de imagen-->
+                <!-- El ATRIBUTO de SRC es el directorio donde se encuentra tu imagen
+                EL atributo ALT es un texto que se muestra en caso de qu eno se encuentre el archivo de la imagen-->
+                    <img src="img/logo.svg" alt="Logotipo de bienes raices"> <!-- La etiqueta de imagen 2img" NO NECESITA ETIQUETA DE CIERRE-->
+                </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
+
+                <nav class="navegacion"> <!-- la eiqueta NAV siempre va cuando tengas ENLACES de NAVEGACÓN-->
+                    <!--Enlaces-->
+                    <a href="nosotros.html">Nosotros</a>
+                    <!-- Cuando hacemos un enlace a otro sitio web hay que usar
+                    el protocolo completo HTTPS://-->
+                    <!--
+                    <a href="http://www.netflix.com">Ir a Nteflix</a>
+                    -->
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+            <!--
+            <h1> Encabezados </h1>
+            <h2>1</h2> Encabezados
+            <h3>2</h3> Disminuye el tamaño de letra
+            <h4>3</h4>
+            <h5>4</h5>
+            <h6>5</h6>
+            -->
+            <!-- PÁRRAFOS. Son de un solo tamaño.
+            <p>Hola Mundo! Mi nombre es Daniel pero mis amigos me dicen Archie</p>
+            <p>No hay límites en los párrafos.</p>
+            <p>Cada párrafo puede representa un salto de línea</p>
+            -->
+            <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
+        </div> <!-- CONTENEDOR -->
+    </header>
+
+    <!-- La etiqueta SECITON se usa cuando su primera etiqueta HIJO sea un ENCABEZADO: h1, h2, h3, h4... 
+    Y que además sea algo distinto a lo que había anteriormente (en este caso una navegacion-->
+    <section class="contenedor seccion"> 
+        <h2 class="fw-300 centrar-texto">Más sobre nosotros</h2>
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="img/icono1.svg" alt="Icono seguridad"> <!-- Los formatos SCG son los mejores NO SE DISTORCIONAN SI LOS AMPLÍAS-->
+                <h3 class = "encabezado mayusculas">Seguridad</h3> <!-- El atributo CLASS permite -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe assumenda modi debitis quia vel adipisci officiis veniam qui labore!
+                Nula ut magni suscipit unde animi quidem vitae aspernatur aliquid iure.</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono2.svg" alt="Icono mejor precio">
+                <h3 class = "encabezado mayusculas">El mejor precio</h3> <!-- CLASS puede ser REUTILIZABLE-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe assumenda modi debitis quia vel adipisci officiis veniam qui labore!
+                Nulla ut magni suscipit unde animi quidem vitae aspernatur aliquid iure.</p>
+            </div>
+            
+            <div class="icono">
+                <img src="img/icono3.svg" alt="Icono a tiempo">
+                <h3 class = "encabezado mayusculas">A tiempo</h3> <!-- 2 CLASES: encabezado Y mayusculas SEPARADAS POR UN ESPACIO-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe assumenda modi debitis quia vel adipisci officiis veniam qui labore!
+                Nulla ut magni suscipit unde animi quidem vitae aspernatur aliquid iure.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="seccion contenedor">
+        <h2 class="fw-300 centrar-texto">Casas y Depas en Venta</h2>
+        <div class="contenedor-anuncios">
+
+            <div class="anuncio">
+                <img src="img/anuncio1.jpg" alt="Anuncio casa en el lago">
+                <div class="contenido-anuncio">
+                    <h3>Casa de lujo en el lago</h3>
+                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
+                    <p class="precio">$3,000,000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono auto">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono dormitorio">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                </div> <!-- CONTENIDO ANUNCIO -->
+            </div> <!-- ANUNCIO -->
+
+            <div class="anuncio">
+                <img src="img/anuncio2.jpg" alt="Anuncio casa de lujo">
+                <div class="contenido-anuncio">
+                    <h3>Casa terminados de lujo</h3>
+                    <p>Casa con diseño moderno, así como tecnología inteligente y amueblada</p>
+                    <p class="precio">$2,000,000</p>
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono auto">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono dormitorio">
+                            <p>4</p>
+                        </li>
+                    </ul>
+                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                </div> <!-- CONTENIDO ANUNCIO -->
+            </div> <!-- ANUNCIO -->
+
+            <div class="anuncio">
+                <img src="img/anuncio3.jpg" alt="Anuncio casa con alberca">
+                <div class="contenido-anuncio">
+                    <h3>Casa con alberca</h3>
+                    <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad</p>
+                    <p class="precio">$3,000,000</p>
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="icono auto">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="icono dormitorio">
+                            <p>4</p>
+                        </li>
+                    </ul>
+                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                </div> <!-- CONTENIDO ANUNCIO -->
+            </div> <!-- ANUNCIO -->
+        </div>
+        <div class="ver-todas">
+            <a href="anuncios.html" class="boton boton-verde">Ver todas</a>
+        </div>
+    </main>
+
+    <section class="imagen-contacto">
+        <div class="contenedor contenido-contacto">
+            <h2>Encuentra la casa de tus sueños</h2>
+            <p>Llena el formulario de contacto y un asesor se pondrá en contacto en contigo.</p>
+            <a href="contacto.html" class="boton boton-amarillo">Contáctanos</a>
+        </div>
+    </section>
+
+    <div class="seccion-inferior contenedor seccion">
+        <section class="blog">
+            <h3 class="centrar-texto fw-300">Nuestro blog</h3>
+
+            <article class="entrada-blog"> <!-- Se usa para BLOGS para rodear la ENTRADA, en FOROS como en las RESPUESTAS, o CLASIFICADOS-->
+                <div class="imagen">
+                    <img src="img/blog1.jpg" alt="Entrada de blog">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Terraza en el techo de tu casa</h4>
+                    </a>
+                    <p>Escrito el: <span> 20/10/2020 </span> por: <span> Admin </span> </p>
+                    <p>Consejos para construir una terraza en el techo de tu casa, con
+                    los mejores materiales y ahorrando dinero</p>
+                </div>
+            </article>
+            
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <img src="img/blog2.jpg" alt="Entrada de blog">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Guía para decoración de tu hogar</h4>
+                    </a>
+                    <p>Escrito el: <span> 20/10/2020 </span> por: <span> Admin </span> </p>
+                    <p>Maximiza el espacio en tu hogar con esta guía,
+                    aprende a combinar muebles y colores para darle vida
+                    a tu espacio</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="testimoniales">
+            <h3 class="centrar-texto fw-300">Testimoniales</h3>
+            <!---
+            <header>
+                <p>Escrito por: </p> <!-- Puedo tener más de un header en toda la página--
+            </header>
+            -->
+            <div class="testimonial">
+                <blockquote> <!-- Se usa para testimoniales de alguna persona O PARA RESALTAR UN POCO MÁS DEL RESTO DEL TEXTO-->
+                    El personal se comportó de una excelente forma, muy buena atención y la casa
+                    que me ofrecieron cumple con todas mis expectativas.
+                </blockquote>
+                <!--Podríamos poder FOOTERS en otras partes como aquí:
+                <footer>
+                    <p>- Daniel Zanabria</p>
+                </footer>
+                -->
+                <p>- Daniel Rugerio</p> <!-- Como sólo es un párrafo está en corto y un footer es innecesario-->    
+            </div>
+            
+        </section>
+    </div>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <!-- repetimos enlaces de navegación -->
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+
+            <p class="copyright">Todos los derechos reservados. 2020 &copy;</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+/*
+h1{ /* SELECTOR: el elemento añl que quiero aplicarle el CSS. Puedes seleccionar cualquier tipo de etiqueta: div, p, h1, img, etc.
+    color: blue; /* El ESTILO (propiedad: valor;) que se le va a aplicar al SELECTOR 
+    font-size: 46px;
+}
+*/
+/* Si tienes DOS SELECTORES que apuntan al mismo, el último en aparecer en el CSS es el que se aplica
+h1{
+    color: red;
+    font-size: 16px;
+}
+*/
+
+/* Recomendable usar CLASES en lugar de ID en CSS */
+
+/*
+#site-header{ /* SELECTOR que apunta a un ID
+    background-color: red;
+}
+*/
+
+html {
+    box-sizing: border-box; /* Para que no afecte los TAMAÑOS (width) de los elementos sin que intervengan los PADDING o los MARGIN
+    /* Por defualt TODOS LOS NAVEGADORES usan un FONT-SIZE de 16px */
+    font-size: 62.5%; /* Reset para REMs. 62.5% = 10 px de 16 px que eran por default */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* -------------------- FONTS ---------------------------- */
+body{
+    /* el menu que se desplega son fuentes seguras para la internet 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem; /* Que vuelva a hacer el default y lo hará más grande la letra */
+    line-height: 2;
+}
+
+
+/*--------------------- GLOBALES ------------------------- */
+.contenedor{
+    max-width: 120rem; /* Toma TODO EL ESPACIO DISPONIBLE SIN PASARTE DE 120rem = 1200px */
+    /*
+    margin-left: auto; /* estas dos lineas sirven para centrar a la izquierda */
+    /*
+    margin-right: auto; /* y derecha del tamaño disponible automaticamente */
+    /*
+    margin: 0 auto 0 auto; /* valores: ARRIBA DERECHA ABAJO IZQUIERDA, pero si se repiten 1 y 1 es mejor así: */
+    margin: 0 auto;
+}
+
+img{ /* esto hace a TODAS las IMÁGENES RESPONSIVAS */
+    max-width: 100%;
+}
+
+/* sistema de tamaños de encabezados */
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 3.4rem;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+h4{
+    font-size: 2.6rem;
+}
+
+/* -------------------- UTILIDADES ----------------------- */
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300{
+    font-weight: 300;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.d-block{
+    display: block!important;
+}
+
+.contenido-centrado{
+    max-width: 800px;    
+}
+
+/* --------------------- BOTONES ------------------------- */
+.boton{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    /*
+    display: inline:  por defecto es INLINE para los ENLACES */
+    display: inline-block; /* para poder darle anchos y margin a los NELACES*/
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    /*padding: 0.5rem;
+    width: 1rem;
+    */
+    text-transform: uppercase;
+    text-align: center;
+    border: none; /* este suele afectar a botones de tipo SUBMIT */ 
+}
+
+.boton:hover{
+    cursor: pointer; /* obliga a un botón a comportarse como un "enlace" pero solo visualmente, pone la manita que caracteriza al puntero sobre un enlace */
+}
+
+.boton-amarillo{
+    background-color: #E08709;
+}
+
+.boton-verde{
+    background-color: #71B100;
+}
+
+/* --------------------  HEADER  ------------------------- */
+.site-header{
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+.site-header.inicio{ /* Cuando se tienen DOS o más CLASES para afectar SÓLO a esa sección o div o etiqueta, se hace poniendo el nombre de TODAS LAS CLASES unidas por puntos "."*/
+    background-image: url(../img/header.jpg); /* la URL de la imagen. Para salir del directorio de "css" es con DOS PUNTOS SEGUIDOS (..), y después accedemos al directorio de "img" y buscamos la imagen */
+    background-position: center center; /* POSICIONA LA IMAGEN EN EL CENTRO */
+    background-size: cover; /* propiedad que forza a la imagen a tomar toda la ventana como tamaño RESPETANDO sus proporciones*/
+    height: 100vh; /* vh: view per height hace que una imagen ABARQUE TODA LA ALTURA DEL TAMAÑO DE LA VENTANA (no la pantalla) */
+    min-height: 60rem; /* define un tamaño MÍNIMO por si haces pequeña la ventana y el "vh" no haga así de chiquita la imagen */
+
+}
+
+.contenido-header{ /* Afecta a los hijos DIRECTOS, NO A LOS NIETOS ni los subsecuentes */
+    height: 100%; /* Toma TODA LA ALTURA DEL PADRE */
+    display: flex; /* display: flex posiciona en un mismo renglon todos los elementos dentro del SELECTOR
+    /*
+    flex-direction: row; ESTE ES POR DEFAULT, no cambia nada, corre de izquierda a derecha */
+    /*
+    flex-direction: row-reverse; ESTE ES COMO EL ANTERIOR PERO LOS POSICIONA EN REVERSA, DE DERECHA A IZQUIERDA */
+    /* para hacerlo de ABAJO hacia ARRIBA: */
+    flex-direction: column; /* Esto hace que los HIJOS INMEDIATOS ahora sigan un ORDERN
+    de ARRIBA hacia ABAJO, es decir VERTICAL, por lo tanto
+    Si usamos justify-content, YA NO VA A AFECTAR HOTIZONTALMENTE, sino VERTICALMENTE:*/
+    justify-content: space-between;
+}
+
+.contenido-header h1{
+    color: white;
+    padding-bottom: 2rem;
+    max-width: 60rem;
+    /* Interlineado */
+    line-height: 2; /* Espacio entre líneas */
+}
+
+.barra{
+    display: flex;
+    /*
+    justify-content: flex-end; /* Posiciona HASTA LA DERECHA HORIZONTALMENTE */
+    /*
+    justify-content: flex-start; /* Posiciona hasta la IZQUIERDA, este es por default */
+    justify-content: space-between; /* deja un espacio ENTRE la IMG y el NAV para ALINEAR HORIZONTALMENTE */
+    /*
+    margin-top: 30px; /* margin NO funciona aquí porque genera un margen indeseado */
+    align-items: center; /* ALINEA de forma VERTICAL los elementos*/
+    padding-top: 3rem;
+}
+
+/* ---------------------- NAVEGACION ---------------------- */
+.navegacion a{
+    /*
+    color: rgba(255,255,255, 0.9) BLANCO ne RGB, el ultimo parámetro va de 0 a 1 y afecta la TRANSPARENCIA */
+    /*
+    color: #ffffff; blanco en hexadecimal */
+    color: white;
+    text-decoration: none; /* elimina la lina que subraya los ENLACES */ 
+    /* Ya no se suelen usar pixeles como unidad de medida, se prefieren los REMs
+    font-size: 18px;
+    */
+    /* Los rem toma el tamañao de la pantalla y acorde a esta varía el valor de un rem*/
+    font-size: 1.8rem; /* 1.8 rem = 18 px */
+    margin-right: 2rem;
+    
+}
+
+.navegacion a:hover{
+    color: #71B100;
+}
+
+.navegacion a:last-of-type{ /* Para no perder la CENTRALIZACIÓN le quitamos el margen a la derecha al ultimo elemento*/
+    /*
+    margin-right: 0; /* Lo que viene después de "a:" es un PSEUDO-SELECTOR, sirve para seleccionar elementos MUY ESPECÍFICOS */
+    margin: 0;
+}
+
+/* ----------------------- iconos Nosotros ----------------------------------- */
+
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono{
+    flex-basis: calc(33% - 1rem);
+    text-align: center;
+}
+
+.icono h3{
+    text-transform: uppercase;
+}
+/*
+.encabezado{ /* SELECTOR que apunta a una CLASE
+    color: darkred;
+}
+*/
+/*
+.mayusculas{
+    text-transform: uppercase;
+}
+*/
+
+/* ------------------- ANUNCIOS ----------------------- */
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+    /* el default es: nowrap */
+    flex-wrap: wrap; /* Este es el padre de los anuncios, y este hace que no haya SCROLL HORIZONTAL */
+}
+
+.anuncio{
+    /* Los siguientes 3 renglones se pueden abreviar en uno: */
+    /*
+    flex-grow: 1; /* SI el contenido puede, CRECE, por eso es FLEXIBLE 1= sí crecer, 0 = no  crecer
+    flex-shrink: 0; /* Con esto evitamos que las etiquetas se enojan si es posible: 1= sí encoger, 0 = no  encoger
+    flex-basis: calc(33.33% - 1rem); /* Esto define el tamaño, es decir, que quepan 3 por renglon 
+    */
+    flex: 0 0 calc(33.3% - 1rem);
+    border-style: solid;
+    border-color: #B5B5B5; /* color gris
+    border-width: 0.1rem; */
+    border: 1px solid #B5B5B5; /* te ahorras tres lineas anteriores en UNA */
+    background-color: #F5F5F5; /* GRIS NO TAN OBSCURO COMO EL DEL BORDER */
+    margin-bottom: 2rem;
+}
+
+.contenido-anuncio{
+    padding: 2rem;
+}
+
+.contenido-anuncio h3, .contenido-anuncio p{
+    margin: 0;
+}
+
+.precio{
+    color: #71B100;
+    font-weight: 700;
+}
+
+.iconos-caracteristicas{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1; /* Para que CREZCA pero sin superar los 500 px del siguiete renglon */
+    max-width: 500px; /* limitamos la separación entre los icónos */
+}
+
+.iconos-caracteristicas li{
+    display: flex;
+    /*flex: 1;*/
+}
+
+.iconos-caracteristicas li img{
+    margin-right: 2rem;
+}
+
+
+
+.ver-todas{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ----------- CONTACTO HOME ---------------------- */
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex; /* usamos flex para poder alinear elementos */
+    align-items: center; /* alinea VERTICALMENTE */
+}
+
+.contenido-contacto{
+    flex: 1; /* esto hace que el elemento seleccionado ocupe todos los pixeles disponibles, y depende de cuantos elementos hayan dentro, se dividen de manera proporcional los pixeles disponibles */
+    color: white;
+}
+
+.contenido-anuncio p{
+    font-size: 1.8rem;
+}
+
+
+/* --------------------------- SECCIÓN INFERIOR ------------------------------- */
+.seccion-inferior{
+    display: flex; /* estos dos siempre van juntos */ 
+    justify-content: space-between;
+}
+
+.seccion-inferior .blog{
+    flex-basis: 60%; /* Sirve para definir la distribución del espacio dentro de la seccion */
+}
+
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+}
+
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen{
+    flex-basis: 40%; 
+}
+
+.entrada-blog .texto-entrada{
+    flex-basis: calc(60% - 3rem);
+}
+
+.texto-entrada a{
+    color: black;
+    text-decoration: none;
+}
+
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.4; /* interlineado */ 
+}
+
+.texto-entrada h4::after{ /* Crea un PSEUDO ELEMENTO después del h4 */
+    content: '';
+    display: block; /* Permite agregar un rectángulo de las mdedidas que tú definas: */
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #71B100;
+    margin-top: 1rem; 
+}
+
+.texto-entrada span{
+    color: #E08709;    
+}
+
+/* --------------------- TESTIMONIALES ----------------------------------- */
+.testimonial{
+    background-color: #71B100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 2rem;
+    /*
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    */
+}
+
+.testimonial p{
+    text-align: right;
+}
+
+.testimonial blockquote::before{ /* otro PSEUDO ELEMENTO */
+    content: '';
+    background-image: url(../img/comilla.svg);
+    /* display: block; 
+    */
+    width: 4rem;
+    height: 4rem;
+    position: absolute; /* Position: ABSOLUTE; en el hijo */
+    top: 0; /* 0 es default */
+    left: -2rem;
+}
+
+.testimonial blockquote{
+    position: relative; /* position: RELATIVE; en el PADRE */
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/* ------------- FOOTER ---------------- */
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+
+
+.contenedor-footer{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright{
+    margin: 0;
+    color: white;
+}
+
+/* --------------- EL CSS QUE SIGUE ESTÁ ENFOCADA PARA LAS PÁGINAS INTERNAS DE LA PÁGINA PRINCIPAL ------------------- */
+
+/* ----------------- NOSOTROS */
+.contenido-nosotros{
+    display: grid; /* EL nuevo ESTÁNDAR para DISTRIBUIR CONTENIDO en una página web */
+    /* Se menaje POR COLUMNAS, dependiendo del NUMERO DE HIJOS DENTRO de .contenido-nosotros, es el NUMERO DE COLUMNAS que vas a definir:
+    grid-template-columns: 50% 50%; dos columnas, 50% para cada una */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas, 1 fracción para cada una */
+    /* Ya no se usa padding para SEPARAR
+    se usa: */
+    grid-column-gap: 2rem; /* Supera FLEXBOX y a FLOAT */
+}
+
+.texto-nosotros blockquote{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0  0 3 rem 0;
+}
+
+/* ------------- ANUNCIO */
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ------------ CONTACTO */
+.contacto p{
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend{
+    font-size: 2.4rem;
+    color: #464646;
+}
+
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+/*
+input[type = "text"],
+input[type = "email"]{ /* seleccionamos por TYPE las etiquetas INPUT que deseamos afectar 
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none; /* elimina borde por default 
+    border-radius: 1rem; /* redondea esquinas 
+}
+/* PARA NO REPETIR CÓDIGO, SE ENLISTA TODAS LAS ETIQUETAS Y TIPOS QUE DESEAMOS AFECTAR
+input[type = "email"]{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}*/
+/* La mejor opcion para afectar todos los input menos el SUBMIT es esta: */
+input:not([type="submit"]), 
+textarea, 
+select{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+input[type="radio"]{
+    width: auto; /* toma solo el espacio que requieres, no tomes más para los RADIO BUTTON */
+    margin: 0;
+}
+
+input[type="checkbox"]{
+    display: block;
+    width: auto;
+    margin: 0 0 0 0;
+}
+
+select{
+    /* el siguiente renglon es un prefijo que ya casi no se usan pero sirve para que esto funcione: */
+    -webkit-appearance: none; /* perdemos una flechita de diseño pero funciona bien */  
+    appearance: none;
+}
+
+textarea{
+    height: 20rem;
+}
+
+.forma-contacto{
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forma-intereses{
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
