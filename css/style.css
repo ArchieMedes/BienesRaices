@@ -527,23 +527,45 @@ h4{
     font-weight: 300;
 }
 
-/* ------------- FOOTER ---------------- */
-.site-footer{
+/* -------------------------- FOOTER ---------------- */
+.site-footer {
     background-color: #333333;
-    margin: 0;
+    margin: 0; 
 }
-
 
 .contenedor-footer{
     padding: 3rem 0;
-    display: flex;
+    display: block;
     justify-content: space-between;
+    text-align: center;
+}
+
+.navegacion-footer {
+    padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        background-color: #333333;
+        margin: 0;       
+    }
+    .contenedor-footer{
+        align-items: center; /* ALINEA de forma VERTICAL los elementos*/
+          
+    }
 }
 
 .copyright{
     margin: 0;
     color: white;
 }
+
+
+
+
+
+
+
 
 /* --------------- EL CSS QUE SIGUE ESTÁ ENFOCADA PARA LAS PÁGINAS INTERNAS DE LA PÁGINA PRINCIPAL ------------------- */
 
