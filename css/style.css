@@ -41,6 +41,7 @@ body{
 
 /*--------------------- GLOBALES ------------------------- */
 .contenedor{
+    width: 90%;
     max-width: 120rem; /* Toma TODO EL ESPACIO DISPONIBLE SIN PASARTE DE 120rem = 1200px */
     /*
     margin-left: auto; /* estas dos lineas sirven para centrar a la izquierda */
@@ -103,7 +104,7 @@ h4{
     font-size: 1.8rem;
     /*
     display: inline:  por defecto es INLINE para los ENLACES */
-    display: inline-block; /* para poder darle anchos y margin a los NELACES*/
+    /*display: inline-block; /* para poder darle anchos y margin a los ENLACES*/
     padding: 1rem 3rem;
     margin-top: 3rem;
     /*padding: 0.5rem;
@@ -112,6 +113,8 @@ h4{
     text-transform: uppercase;
     text-align: center;
     border: none; /* este suele afectar a botones de tipo SUBMIT */ 
+    display: block;
+    /*flex-basis: 100%;*/
 }
 
 .boton:hover{
@@ -152,6 +155,14 @@ h4{
     de ARRIBA hacia ABAJO, es decir VERTICAL, por lo tanto
     Si usamos justify-content, YA NO VA A AFECTAR HOTIZONTALMENTE, sino VERTICALMENTE:*/
     justify-content: space-between;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenido-header {
+        text-align: right; /* o a la izquierda, es igual, el justify-content:space between de arriba los separa de igual forma */
+    }
+    
 }
 
 .contenido-header h1{
@@ -163,19 +174,38 @@ h4{
 }
 
 .barra{
-    display: flex;
-    /*
-    justify-content: flex-end; /* Posiciona HASTA LA DERECHA HORIZONTALMENTE */
-    /*
-    justify-content: flex-start; /* Posiciona hasta la IZQUIERDA, este es por default */
-    justify-content: space-between; /* deja un espacio ENTRE la IMG y el NAV para ALINEAR HORIZONTALMENTE */
-    /*
-    margin-top: 30px; /* margin NO funciona aquí porque genera un margen indeseado */
-    align-items: center; /* ALINEA de forma VERTICAL los elementos*/
     padding-top: 3rem;
 }
 
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        /*
+        justify-content: flex-end; /* Posiciona HASTA LA DERECHA HORIZONTALMENTE */
+        /*
+        justify-content: flex-start; /* Posiciona hasta la IZQUIERDA, este es por default */
+        justify-content: space-between; /* deja un espacio ENTRE la IMG y el NAV para ALINEAR HORIZONTALMENTE */
+        /*
+        margin-top: 30px; /* margin NO funciona aquí porque genera un margen indeseado */
+        align-items: center; /* ALINEA de forma VERTICAL los elementos*/
+    }    
+}
+
+
+
+
 /* ---------------------- NAVEGACION ---------------------- */
+@media (min-width: 768px) {    
+    .contenedor-logo {
+        padding-bottom: 10rem;
+    }
+}
+@media (min-width: 900px) {
+    .contenedor-logo {
+        padding-bottom: 0;
+    }
+}
+
 .navegacion a{
     /*
     color: rgba(255,255,255, 0.9) BLANCO ne RGB, el ultimo parámetro va de 0 a 1 y afecta la TRANSPARENCIA */
@@ -187,31 +217,49 @@ h4{
     font-size: 18px;
     */
     /* Los rem toma el tamañao de la pantalla y acorde a esta varía el valor de un rem*/
-    font-size: 1.8rem; /* 1.8 rem = 18 px */
-    margin-right: 2rem;
-    
+    font-size: 2.2rem;
+    display: block;
+}
+
+@media (min-width: 900px) {
+    .navegacion {
+        font-size: 1.8rem; /* 1.8 rem = 18 px */
+    }
+    .navegacion a {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type{ /* Para no perder la CENTRALIZACIÓN le quitamos el margen a la derecha al ultimo elemento*/
+        /*
+        margin-right: 0; /* Lo que viene después de "a:" es un PSEUDO-SELECTOR, sirve para seleccionar elementos MUY ESPECÍFICOS */
+        margin: 0;
+    }
 }
 
 .navegacion a:hover{
     color: #71B100;
 }
 
-.navegacion a:last-of-type{ /* Para no perder la CENTRALIZACIÓN le quitamos el margen a la derecha al ultimo elemento*/
-    /*
-    margin-right: 0; /* Lo que viene después de "a:" es un PSEUDO-SELECTOR, sirve para seleccionar elementos MUY ESPECÍFICOS */
-    margin: 0;
-}
+
 
 /* ----------------------- iconos Nosotros ----------------------------------- */
-
-.iconos-nosotros{
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768) {
+    .iconos-nosotros{
+        display: flex;
+        justify-content: space-between;
+    }
+    
 }
 
 .icono{
-    flex-basis: calc(33% - 1rem);
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }
+    
 }
 
 .icono h3{
@@ -229,27 +277,55 @@ h4{
 */
 
 /* ------------------- ANUNCIOS ----------------------- */
-.contenedor-anuncios{
-    display: flex;
-    justify-content: space-between;
-    /* el default es: nowrap */
-    flex-wrap: wrap; /* Este es el padre de los anuncios, y este hace que no haya SCROLL HORIZONTAL */
+@media (min-width: 900px) {
+    .contenedor-anuncios{
+        display: flex;
+        justify-content: space-between;
+        /* el default es: nowrap */
+        flex-wrap: wrap; /* Este es el padre de los anuncios, y este hace que no haya SCROLL HORIZONTAL */
+        margin-bottom: 2rem;
+    }
+    .enlace-propiedad {
+        
+        margin-bottom: 0;
+
+    }
+    .enlace-propiedad a {
+        
+        margin-top: 0;
+
+    }
 }
 
 .anuncio{
-    /* Los siguientes 3 renglones se pueden abreviar en uno: */
-    /*
-    flex-grow: 1; /* SI el contenido puede, CRECE, por eso es FLEXIBLE 1= sí crecer, 0 = no  crecer
-    flex-shrink: 0; /* Con esto evitamos que las etiquetas se enojan si es posible: 1= sí encoger, 0 = no  encoger
-    flex-basis: calc(33.33% - 1rem); /* Esto define el tamaño, es decir, que quepan 3 por renglon 
-    */
-    flex: 0 0 calc(33.3% - 1rem);
+    
     border-style: solid;
     border-color: #B5B5B5; /* color gris
     border-width: 0.1rem; */
     border: 1px solid #B5B5B5; /* te ahorras tres lineas anteriores en UNA */
     background-color: #F5F5F5; /* GRIS NO TAN OBSCURO COMO EL DEL BORDER */
-    margin-bottom: 2rem;
+    padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .anuncio {
+            /* Los siguientes 3 renglones se pueden abreviar en uno: */
+        /*
+        flex-grow: 1; /* SI el contenido puede, CRECE, por eso es FLEXIBLE 1= sí crecer, 0 = no  crecer
+        flex-shrink: 0; /* Con esto evitamos que las etiquetas se enojan si es posible: 1= sí encoger, 0 = no  encoger
+        flex-basis: calc(33.33% - 1rem); /* Esto define el tamaño, es decir, que quepan 3 por renglon 
+        */
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .anuncio {
+        display: flex;
+        flex-direction: column; /* Esto hace que los HIJOS INMEDIATOS ahora sigan un ORDERN
+        de ARRIBA hacia ABAJO, es decir VERTICAL, por lo tanto
+        Si usamos justify-content, YA NO VA A AFECTAR HOTIZONTALMENTE, sino VERTICALMENTE:*/
+        justify-content: space-between;
+        text-align: center;
+        
+    }    
 }
 
 .contenido-anuncio{
@@ -271,7 +347,7 @@ h4{
     display: flex;
     justify-content: space-evenly;
     flex: 1; /* Para que CREZCA pero sin superar los 500 px del siguiete renglon */
-    max-width: 500px; /* limitamos la separación entre los icónos */
+    max-width: 100%; /* limitamos la separación entre los icónos */
 }
 
 .iconos-caracteristicas li{
@@ -284,11 +360,13 @@ h4{
 }
 
 
-
-.ver-todas{
-    display: flex;
-    justify-content: flex-end;
+@media (min-width: 768px) {
+    .ver-todas{
+        display: flex;
+        justify-content: flex-end;
+    }    
 }
+
 
 /* ----------- CONTACTO HOME ---------------------- */
 .imagen-contacto{
@@ -300,10 +378,45 @@ h4{
     align-items: center; /* alinea VERTICALMENTE */
 }
 
+
 .contenido-contacto{
-    flex: 1; /* esto hace que el elemento seleccionado ocupe todos los pixeles disponibles, y depende de cuantos elementos hayan dentro, se dividen de manera proporcional los pixeles disponibles */
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 90%; /* esto hace que el elemento seleccionado ocupe todos los pixeles disponibles, y depende de cuantos elementos hayan dentro, se dividen de manera proporcional los pixeles disponibles */
     color: white;
+
 }
+
+
+@media (min-width: 768px) {
+    .contenido-contacto {
+        flex: 1;
+    }
+}
+
+@media (min-width: 900px) {
+    .contenido-contacto {
+        flex: 0 1 90%;
+        align-items: center;
+    }
+    
+}
+
+.contactanos-boton {
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .contactanos-boton {
+        display: flex;
+        margin-left: 4.5rem;
+
+    }
+}
+
+
 
 .contenido-anuncio p{
     font-size: 1.8rem;
@@ -311,37 +424,47 @@ h4{
 
 
 /* --------------------------- SECCIÓN INFERIOR ------------------------------- */
-.seccion-inferior{
-    display: flex; /* estos dos siempre van juntos */ 
-    justify-content: space-between;
+
+@media (min-width: 900px) {
+    .seccion-inferior{
+        display: flex; /* estos dos siempre van juntos */ 
+        justify-content: space-between;
+    }
+    
+    .seccion-inferior .blog{
+        flex-basis: 60%; /* Sirve para definir la distribución del espacio dentro de la seccion */
+    }
+    
+    .seccion-inferior .testimoniales{
+        flex-basis: calc(40% - 2rem);
+    }    
 }
 
-.seccion-inferior .blog{
-    flex-basis: 60%; /* Sirve para definir la distribución del espacio dentro de la seccion */
-}
 
-.seccion-inferior .testimoniales{
-    flex-basis: calc(40% - 2rem);
-}
-
+/* ------------- BLOG ---------------- */
 .entrada-blog{
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 2rem;
-
 }
 
-.entrada-blog:last-of-type{
-    margin-bottom: 0;
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
+    .entrada-blog:last-of-type{
+        margin-bottom: 0;
+    }
+    
+    .entrada-blog .imagen{
+        flex-basis: 40%; 
+    }
+    
+    .entrada-blog .texto-entrada{
+        flex-basis: calc(60% - 3rem);
+    }
 }
 
-.entrada-blog .imagen{
-    flex-basis: 40%; 
-}
 
-.entrada-blog .texto-entrada{
-    flex-basis: calc(60% - 3rem);
-}
 
 .texto-entrada a{
     color: black;

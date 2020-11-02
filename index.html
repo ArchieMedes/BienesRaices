@@ -18,13 +18,14 @@
     <header class = "site-header inicio">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/"> <!-- cuando en el atributo href ponemos una diagonal nos lleva a la página principal-->
-                <!--Etiqueta de imagen-->
-                <!-- El ATRIBUTO de SRC es el directorio donde se encuentra tu imagen
-                EL atributo ALT es un texto que se muestra en caso de qu eno se encuentre el archivo de la imagen-->
-                    <img src="img/logo.svg" alt="Logotipo de bienes raices"> <!-- La etiqueta de imagen 2img" NO NECESITA ETIQUETA DE CIERRE-->
-                </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
-
+                <div class="contenedor-logo">
+                    <a href="/"> <!-- cuando en el atributo href ponemos una diagonal nos lleva a la página principal-->
+                    <!--Etiqueta de imagen-->
+                    <!-- El ATRIBUTO de SRC es el directorio donde se encuentra tu imagen
+                    EL atributo ALT es un texto que se muestra en caso de qu eno se encuentre el archivo de la imagen-->
+                        <img src="img/logo.svg" alt="Logotipo de bienes raices"> <!-- La etiqueta de imagen 2img" NO NECESITA ETIQUETA DE CIERRE-->
+                    </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
+                </div>
                 <nav class="navegacion"> <!-- la eiqueta NAV siempre va cuando tengas ENLACES de NAVEGACÓN-->
                     <!--Enlaces-->
                     <a href="nosotros.html">Nosotros</a>
@@ -92,8 +93,8 @@
 
             <div class="anuncio">
                 <img src="img/anuncio1.jpg" alt="Anuncio casa en el lago">
+                <h3>Casa terminados de lujo</h3>
                 <div class="contenido-anuncio">
-                    <h3>Casa de lujo en el lago</h3>
                     <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
                     <p class="precio">$3,000,000</p>
 
@@ -111,15 +112,16 @@
                             <p>4</p>
                         </li>
                     </ul>
-
-                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    <div class="enlace-propiedad">
+                        <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    </div>
                 </div> <!-- CONTENIDO ANUNCIO -->
             </div> <!-- ANUNCIO -->
 
             <div class="anuncio">
                 <img src="img/anuncio2.jpg" alt="Anuncio casa de lujo">
+                <h3>Casa terminados de lujo</h3>
                 <div class="contenido-anuncio">
-                    <h3>Casa terminados de lujo</h3>
                     <p>Casa con diseño moderno, así como tecnología inteligente y amueblada</p>
                     <p class="precio">$2,000,000</p>
                     <ul class="iconos-caracteristicas">
@@ -136,14 +138,16 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    <div class="enlace-propiedad">
+                        <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    </div>
                 </div> <!-- CONTENIDO ANUNCIO -->
             </div> <!-- ANUNCIO -->
 
             <div class="anuncio">
                 <img src="img/anuncio3.jpg" alt="Anuncio casa con alberca">
+                <h3>Casa con alberca</h3>
                 <div class="contenido-anuncio">
-                    <h3>Casa con alberca</h3>
                     <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad</p>
                     <p class="precio">$3,000,000</p>
                     <ul class="iconos-caracteristicas">
@@ -160,7 +164,9 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    <div class="enlace-propiedad">
+                        <a href="anuncio.html" class="boton boton-amarillo d-block">Ver propiedad</a>
+                    </div>
                 </div> <!-- CONTENIDO ANUNCIO -->
             </div> <!-- ANUNCIO -->
         </div>
@@ -170,10 +176,14 @@
     </main>
 
     <section class="imagen-contacto">
-        <div class="contenedor contenido-contacto">
-            <h2>Encuentra la casa de tus sueños</h2>
-            <p>Llena el formulario de contacto y un asesor se pondrá en contacto en contigo.</p>
-            <a href="contacto.html" class="boton boton-amarillo">Contáctanos</a>
+        <div class=" contenedor contenido-contacto">
+            <div class="contenedor contenedor-contacto">
+                <h2>Encuentra la casa de tus sueños</h2>
+                <p>Llena el formulario de contacto y un asesor se pondrá en contacto en contigo.</p>
+            </div>
+            <div class="contenedor contactanos-boton">
+                <a href="contacto.html" class="boton boton-amarillo">Contáctanos</a>
+            </div>
         </div>
     </section>
 
