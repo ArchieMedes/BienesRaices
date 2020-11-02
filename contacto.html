@@ -15,9 +15,14 @@
     <header class = "site-header">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/"> <!-- cuando en el atributo href ponemos una diagonal nos lleva a la página principal-->
-                    <img src="img/logo.svg" alt="Logotipo de bienes raices"> <!-- La etiqueta de imagen 2img" NO NECESITA ETIQUETA DE CIERRE-->
-                </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
+                <div class="contenedor-logo">
+                    <a href="/"> <!-- cuando en el atributo href ponemos una diagonal nos lleva a la página principal-->
+                    <!--Etiqueta de imagen-->
+                    <!-- El ATRIBUTO de SRC es el directorio donde se encuentra tu imagen
+                    EL atributo ALT es un texto que se muestra en caso de qu eno se encuentre el archivo de la imagen-->
+                        <img src="img/logo.svg" alt="Logotipo de bienes raices"> <!-- La etiqueta de imagen 2img" NO NECESITA ETIQUETA DE CIERRE-->
+                    </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
+                </div>
 
                 <nav class="navegacion"> 
                     <a href="nosotros.html">Nosotros</a>
@@ -50,9 +55,22 @@
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" placeholder="Tu fon" required>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje">Borra esto y escribe lo que quieras...</textarea> <!-- atributo NAME es la forma en la que lo leeríamos desde un lenguaje BACK-END. Los atributos de COLUMNAS Y ROWS no se utilizan casi, se define el tamaño en CSS-->
+                <p>Elija sus interéses</p> <!-- Los CHECKBOX sí te dejan escoger VARIAS OPCIONES-->
+                <div class="forma-intereses">
+                    
+                    <label for="negocios">Negocios</label>
+                    <input type="checkbox" name="intereses" value="negocios">
+
+                    <label for="bienes-raices">Bienes raices</label>
+                    <input type="checkbox" name="intereses" value="bienes-raices"> 
+
+                    <label for="renta">Renta</label>
+                    <input type="checkbox" name="intereses" value="renta"> 
+                </div>
                 
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje">Borra esto y escribe lo que quieras...</textarea> <!-- atributo NAME es la forma en la que lo leeríamos desde un lenguaje BACK-END. Los atributos de COLUMNAS Y ROWS no se utilizan casi, se define el tamaño en CSS-->       
+
             </fieldset>
 
             <fieldset>
@@ -87,19 +105,6 @@
                 <p>Si eligió Teléfono, elija la Fecha y Hora plz</p>
                 <label for="fecha">Fecha:</label>
                 <input type="date" id="fecha">
-
-                <p>Elija sus interéses</p> <!-- Los CHECKBOX sí te dejan escoger VARIAS OPCIONES-->
-                <div class="forma-intereses">
-                    
-                    <label for="negocios">Negocios</label>
-                    <input type="checkbox" name="intereses" value="negocios">
-
-                    <label for="bienes-raices">Bienes raices</label>
-                    <input type="checkbox" name="intereses" value="bienes-raices"> 
-
-                    <label for="renta">Renta</label>
-                    <input type="checkbox" name="intereses" value="renta"> 
-                </div>
                 
                 <!-- Fecha y Hora -->
                 <label for="hora">Hora:</label>
@@ -109,8 +114,7 @@
                 <input type="search"> te permite borrar tu busqueda para ingresar una nueva
                 <input type="url"> para escribir urls
                 -->
- 
-            </fieldset>
+             </fieldset>
 
             <input type="submit" value="Enviar yei!" class="boton boton-verde">
 

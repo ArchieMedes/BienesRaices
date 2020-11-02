@@ -585,15 +585,19 @@ h4{
 /* --------------- EL CSS QUE SIGUE ESTÁ ENFOCADA PARA LAS PÁGINAS INTERNAS DE LA PÁGINA PRINCIPAL ------------------- */
 
 /* ----------------- NOSOTROS */
-.contenido-nosotros{
-    display: grid; /* EL nuevo ESTÁNDAR para DISTRIBUIR CONTENIDO en una página web */
-    /* Se menaje POR COLUMNAS, dependiendo del NUMERO DE HIJOS DENTRO de .contenido-nosotros, es el NUMERO DE COLUMNAS que vas a definir:
-    grid-template-columns: 50% 50%; dos columnas, 50% para cada una */
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas, 1 fracción para cada una */
-    /* Ya no se usa padding para SEPARAR
-    se usa: */
-    grid-column-gap: 2rem; /* Supera FLEXBOX y a FLOAT */
+
+@media (min-width: 768px) {
+    .contenido-nosotros{
+        display: grid; /* EL nuevo ESTÁNDAR para DISTRIBUIR CONTENIDO en una página web */
+        /* Se menaje POR COLUMNAS, dependiendo del NUMERO DE HIJOS DENTRO de .contenido-nosotros, es el NUMERO DE COLUMNAS que vas a definir:
+        grid-template-columns: 50% 50%; dos columnas, 50% para cada una */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas, 1 fracción para cada una */
+        /* Ya no se usa padding para SEPARAR
+        se usa: */
+        grid-column-gap: 2rem; /* Supera FLEXBOX y a FLOAT */
+    }
 }
+
 
 .texto-nosotros blockquote{
     font-weight: 900;
