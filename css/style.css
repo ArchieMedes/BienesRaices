@@ -240,6 +240,30 @@ h4{
     color: #71B100;
 }
 
+/* ----------------- MOBILE MENU **************** */
+.mobile-menu img {
+    width: 5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
+.navegacion:target { /* TARGET sirve para que cuando se haga CLICK en el ENLACE uqe lleva a "NAVEGACION", NAVEGACION se muestre */
+    display: block;
+}
+.navegacion {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: block;
+    }
+    
+}
 
 
 /* ----------------------- iconos Nosotros ----------------------------------- */

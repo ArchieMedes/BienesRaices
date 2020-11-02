@@ -24,8 +24,21 @@
                     </a> <!-- Al encerrar una ETIQUETA de IMAGEN dentro de una de ENLACE, la IMAGEN se VUELVE un ENLACE-->
                 </div>
                 
-                <nav class="navegacion"> 
+                <div class="mobile-menu">
+                    <!-- USAMOS "#" para LINKEAR a ID's -->
+                    <a href="#navegacion">
+                        <img src="img/barras.svg" alt="Icono menu">
+                    </a> <!--  "navegacion" es el ID-->
+                </div>
+                <!-- Creamos el ID "navegacion" que se enlaza con el enlace anterior -->
+                <nav id="navegacion" class="navegacion"> <!-- la eiqueta NAV siempre va cuando tengas ENLACES de NAVEGACÓN-->
+                    <!--Enlaces-->
                     <a href="nosotros.html">Nosotros</a>
+                    <!-- Cuando hacemos un enlace a otro sitio web hay que usar
+                    el protocolo completo HTTPS://-->
+                    <!--
+                    <a href="http://www.netflix.com">Ir a Nteflix</a>
+                    -->
                     <a href="anuncios.html">Anuncios</a>
                     <a href="blog.html">Blog</a>
                     <a href="contacto.html">Contacto</a>
