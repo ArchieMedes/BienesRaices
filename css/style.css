@@ -550,8 +550,12 @@ h4{
         margin: 0;       
     }
     .contenedor-footer{
+        display: flex;
         align-items: center; /* ALINEA de forma VERTICAL los elementos*/
           
+    }
+    .navegacion-footer {
+        padding-bottom: 2rem;
     }
 }
 
