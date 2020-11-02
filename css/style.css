@@ -243,8 +243,9 @@ h4{
 
 
 /* ----------------------- iconos Nosotros ----------------------------------- */
-@media (min-width: 768) {
-    .iconos-nosotros{
+
+@media (min-width: 768px) {
+    .iconos-nosotros {
         display: flex;
         justify-content: space-between;
     }
@@ -265,6 +266,8 @@ h4{
 .icono h3{
     text-transform: uppercase;
 }
+
+
 /*
 .encabezado{ /* SELECTOR que apunta a una CLASE
     color: darkred;
